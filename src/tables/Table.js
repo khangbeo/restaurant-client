@@ -22,17 +22,22 @@ export default function Table({ table, index }) {
 
     const foundRes = reservations.find(res => Number(table.reservation_id) === Number(res.reservation_id))
     return (
-        <div className='card mx-4 my-3'>
-            <div className='card-body' key={index}>
+        <div className='mx-16 w-9/12 lg:w-4/12 my-6 text-xl leading-10 bg-teal-500 text-white text-center border p-4 rounded-3xl'>
+            <div className='' key={index}>
                 <ErrorAlert error={error} />
-                <h2>Table Name: {table.table_name}</h2><hr />
+                <h2>Table Name: {table.table_name}</h2>
                 <p>Capacity: {table.capacity}</p>
                 <p data-table-id-status={`${table.table_id}`}>Status: {table.reservation_id ? 'Occupied by ' : 'Free'}</p>
                 {foundRes && (
                     <p>{foundRes.first_name} {foundRes.last_name}</p>
                 )}
                 {table.reservation_id && (
-                    <button type='submit' data-table-id-finish={`${table.table_id}`} onClick={() => handleFinish(table.table_id)}>Finish</button>
+                    <button
+                        className='focus:outline-none bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-3'
+                        type='submit' data-table-id-finish={`${table.table_id}`} onClick={() => handleFinish(table.table_id)}
+                    >
+                        Finish
+                    </button>
                 )
                 }
             </div>

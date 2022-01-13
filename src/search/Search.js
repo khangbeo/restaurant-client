@@ -29,11 +29,12 @@ export default function Search() {
     }
 
     return (
-        <div>
+        <div className="text-center h-screen">
             <ErrorAlert error={error} />
-            <span>Search By Phone Number</span>
+            <h2 className='font-bold text-teal-700 text-5xl mx-2 mt-3'>Search By Phone Number</h2>
             <form onSubmit={handleSubmit}>
                 <input
+                    className='text-xl border-2 border-teal-500 rounded-3xl px-4 py-2 mx-3 my-4'
                     type="text"
                     name="mobile_number"
                     value={number}
@@ -41,7 +42,10 @@ export default function Search() {
                     placeholder="Enter a customer's phone number"
                     required
                 />
-                <button type="submit">
+                <button
+                    className='focus:outline-none text-white bg-blue-500 hover:bg-teal-700 bg-teal-500 font-bold text-lg py-2 px-4 rounded-3xl'
+                    type="submit"
+                >
                     Find
                 </button>
             </form>

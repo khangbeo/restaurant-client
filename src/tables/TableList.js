@@ -5,7 +5,7 @@ export default function TableList({ tables }) {
     return (
         <>
             {tables && (
-                <div className='container d-flex justify-content-center'>
+                <div className='flex flex-col sm:flex-row sm:justify-center flex-wrap'>
                     {tables.map((table, index) => (
                         <Table table={table} key={index} />
                     ))}

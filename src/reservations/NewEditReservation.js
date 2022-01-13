@@ -76,9 +76,9 @@ export default function NewEditReservation() {
     return (
         <div>
             {reservationId ? (
-                <h2>Edit Reservation</h2>
+                <h2 className="font-bold text-teal-700 text-center text-5xl mx-2 mt-3">Edit Reservation</h2>
             ) : (
-                <h2>New Reservation</h2>
+                <h2 className="font-bold text-teal-700 text-center text-5xl mx-2 mt-3">New Reservation</h2>
             )}
             <ErrorAlert error={error} />
             <ReservationForm

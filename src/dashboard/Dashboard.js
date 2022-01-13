@@ -60,7 +60,7 @@ function Dashboard() {
   return (
     <main>
       <div className="dashboard-header text-center px-4 py-4">
-        <h1 className="font-bold text-teal-700 text-6xl mx-2 pb-14">Dashboard</h1>
+        <h1 className="font-bold text-teal-700 text-6xl mx-2 pb-8">Dashboard</h1>
         <div>
           <label htmlFor="reservation_date" className="text-xl mx-2">
             Choose date:
@@ -103,7 +103,7 @@ function Dashboard() {
 
       <ErrorAlert error={error} />
       <Reservations reservations={reservations} />
-      <h2 className="text-center my-3">Tables</h2>
+      <h2 className="font-bold text-center text-teal-700 text-5xl mx-2">Tables</h2>
       <TableList tables={tables} />
 
     </main>
