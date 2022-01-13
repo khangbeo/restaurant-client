@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import { useHistory } from "react-router"
 import ErrorAlert from "../layout/ErrorAlert"
 import { cancelReservation } from "../utils/api"
-import './Reservation.css'
 
 const dayjs = require('dayjs')
 const customParseFormat = require('dayjs/plugin/customParseFormat')
