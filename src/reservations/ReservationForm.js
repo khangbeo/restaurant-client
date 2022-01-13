@@ -9,7 +9,6 @@ export default function ReservationForm({
     history,
     id
 }) {
-    console.log(dayjs(formData.reservation_date).format('YYYY-MM-DD'))
     return (
         <div>
             <form
