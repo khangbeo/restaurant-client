@@ -2,8 +2,8 @@
 Final Capstone for Thinkful
 
 ## Links
-* Server Repo: https://github.com/khangbeo/restaurant-server
-* Deployed App: ad-reservation-system.netlify.app
+* Server Repo: [Restaurant Server]https://github.com/khangbeo/restaurant-server
+* Deployed App: [Periodic Tables]https://ad-reservation-system.netlify.app/
 
 ## Installation
 1. Go to the project root
