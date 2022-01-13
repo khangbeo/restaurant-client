@@ -3,6 +3,7 @@ import { createReservations, readReservation, updateReservation } from "../utils
 import { useParams, useHistory } from "react-router";
 import ErrorAlert from "../layout/ErrorAlert";
 import ReservationForm from "./ReservationForm";
+const dayjs = require('dayjs')
 
 export default function NewEditReservation() {
     const initialFormState = {
@@ -59,7 +60,7 @@ export default function NewEditReservation() {
         try {
             if (reservationId) {
                 await updateReservation(formData, controller.signal)
-                history.push(`/dashboard?date=${formData.reservation_date}`)
+                history.push(`/dashboard?date=${dayjs(formData.reservation_date).format('YYYY-MM-DD')}`)
                 setFormData({ ...initialFormState })
             } else {
                 await createReservations(formData, controller.signal)
@@ -86,6 +87,7 @@ export default function NewEditReservation() {
                 handleChange={handleChange}
                 formData={formData}
                 history={history}
+                id={reservationId}
             />
         </div>
     )

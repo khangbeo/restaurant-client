@@ -1,4 +1,5 @@
 import React from 'react'
+const dayjs = require('dayjs')
 
 export default function ReservationForm({
     handleSubmit,
@@ -6,7 +7,9 @@ export default function ReservationForm({
     handleChange,
     formData,
     history,
+    id
 }) {
+    console.log(dayjs(formData.reservation_date).format('YYYY-MM-DD'))
     return (
         <form onSubmit={handleSubmit}>
             <div className="form-group">
@@ -56,7 +59,7 @@ export default function ReservationForm({
                     id='reservation_date'
                     name='reservation_date'
                     pattern='\d{4}-\d{2}-\d{2}'
-                    value={formData.reservation_date}
+                    value={id ? dayjs(formData.reservation_date).format('YYYY-MM-DD') : formData.reservation_date}
                     onChange={handleChange}
                     required
                 />
