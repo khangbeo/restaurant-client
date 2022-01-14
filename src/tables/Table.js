@@ -10,14 +10,34 @@ export default function Table({ table, index }) {
     const history = useHistory()
 
     useEffect(() => {
-        listReservations().then(setReservations)
-    }, [])
-    function handleFinish(tableId) {
-        if (window.confirm('Is this table ready to seat new guests?')) {
-            deleteTable(tableId)
-                .then(history.go())
-                .catch(setError)
+        const abortController = new AbortController()
+
+        function loadReservations() {
+            listReservations().then(setReservations).catch(setError)
         }
+        loadReservations()
+        return () => abortController.abort()
+    }, [])
+
+    useEffect(() => {
+        const abortController = new AbortController()
+        listTables(abortController.signal).catch(setError)
+        return () => abortController.abort()
+    }, [])
+
+    async function handleFinish(tableId) {
+        const abortController = new AbortController()
+
+        try {
+            if (window.confirm('Is this table ready to seat new guests? This cannot be undone.')) {
+                await deleteTable(tableId)
+                history.go()
+                return await listTables(abortController.signal)
+            }
+        } catch (error) {
+            setError(error)
+        }
+
     }
 
     const foundRes = reservations.find(res => Number(table.reservation_id) === Number(res.reservation_id))
