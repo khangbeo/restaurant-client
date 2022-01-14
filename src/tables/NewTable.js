@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ErrorAlert from "../layout/ErrorAlert";
 import { useHistory } from "react-router";
 import { createTable } from "../utils/api";
+import cooking from '../images/cooking-bg.jpg'
 
 export default function NewTable() {
     const initialFormState = {
@@ -38,10 +39,13 @@ export default function NewTable() {
     }
 
     return (
-        <div className="h-screen">
-            <h2 className="font-bold text-teal-700 text-center text-5xl mx-2 mt-3">New Table</h2>
+        <div
+            style={{ backgroundImage: `url(${cooking})` }}
+            className="w-full h-screen bg-no-repeat bg-cover bg-top"
+        >
+            <h2 className="font-bold text-teal-700 text-center text-3xl sm:text-5xl mx-2 p-3">Create a Table</h2>
             <ErrorAlert error={error} />
-            <div className="mx-auto sm:w-8/12 my-6 text-xl leading-10 bg-teal-500 text-white text-center border p-4 rounded-3xl">
+            <div className="mx-auto sm:w-8/12 my-6 text-2xl font-bold leading-10 bg-teal-500 text-white text-center drop-shadow-3xl p-4 rounded-3xl">
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="table_name">Table Name</label>
@@ -70,12 +74,14 @@ export default function NewTable() {
                             required
                         />
                     </div>
-                    <button type='submit' className="focus:outline-none bg-gray-300 hover:bg-gray-400 hover:text-black text-gray-800 font-bold py-2 px-3">
-                        Submit
-                    </button>
-                    <button onClick={history.goBack} className="focus:outline-none bg-gray-300 hover:bg-gray-400 hover:text-black text-gray-800 font-bold py-2 px-3">
-                        Cancel
-                    </button>
+                    <div className="mt-4">
+                        <button type='submit' className="focus:outline-none bg-gray-100 hover:bg-teal-600 hover:text-black text-teal-700 font-bold py-1 px-3 rounded-full">
+                            Submit
+                        </button>
+                        <button onClick={history.goBack} className="focus:outline-none bg-gray-100 hover:bg-teal-600 hover:text-black text-teal-700 font-bold py-1 px-3 rounded-full mx-3">
+                            Cancel
+                        </button>
+                    </div>
                 </form>
             </div>
 

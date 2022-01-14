@@ -1,5 +1,4 @@
 import React from 'react'
-const dayjs = require('dayjs')
 
 export default function ReservationForm({
     handleSubmit,
@@ -7,12 +6,11 @@ export default function ReservationForm({
     handleChange,
     formData,
     history,
-    id
 }) {
     return (
         <div>
             <form
-                className="mx-auto sm:w-8/12 my-6 text-xl leading-10 bg-teal-500 text-white text-center border p-4 rounded-3xl"
+                className="mx-auto sm:w-8/12 drop-shadow-3xl my-6 text-2xl font-bold leading-10 bg-teal-500 text-white text-center p-4 rounded-3xl"
                 onSubmit={handleSubmit}
             >
                 <div className="form-group">
@@ -62,7 +60,7 @@ export default function ReservationForm({
                         id='reservation_date'
                         name='reservation_date'
                         pattern='\d{4}-\d{2}-\d{2}'
-                        value={id ? dayjs(formData.reservation_date).format('YYYY-MM-DD') : formData.reservation_date}
+                        value={formData.reservation_date}
                         onChange={handleChange}
                         required
                     />
@@ -94,12 +92,14 @@ export default function ReservationForm({
                         required
                     />
                 </div>
-                <button type='submit' className="focus:outline-none bg-gray-300 hover:bg-gray-400 hover:text-black text-gray-800 font-bold py-2 px-3">
-                    Submit
-                </button>
-                <button onClick={history.goBack} className="focus:outline-none bg-gray-300 hover:bg-gray-400 hover:text-black text-gray-800 font-bold py-2 px-3">
-                    Cancel
-                </button>
+                <div className="mt-4">
+                    <button type='submit' className="focus:outline-none bg-gray-100 hover:bg-teal-600 hover:text-black text-teal-700 font-bold py-1 px-3 rounded-full mx-3">
+                        Submit
+                    </button>
+                    <button onClick={history.goBack} className="focus:outline-none bg-gray-100 hover:bg-teal-600 hover:text-black text-teal-700 font-bold py-1 px-3 rounded-full mx-3">
+                        Cancel
+                    </button>
+                </div>
             </form>
         </div>
 

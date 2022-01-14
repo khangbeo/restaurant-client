@@ -7,7 +7,7 @@ import { previous, next, today } from "../utils/date-time"
 import { useHistory } from "react-router";
 import Reservations from "../reservations/Reservations";
 import TableList from "../tables/TableList";
-const dayjs = require('dayjs')
+import cooking from '../images/cooking-bg.jpg'
 
 /**
  * Defines the dashboard page.
@@ -59,53 +59,48 @@ function Dashboard() {
 
   return (
     <main>
-      <div className="dashboard-header text-center px-4 py-4">
-        <h1 className="font-bold text-teal-700 text-6xl mx-2 pb-8">Dashboard</h1>
-        <div>
-          <label htmlFor="reservation_date" className="text-xl mx-2">
-            Choose date:
-          </label>
-          <input
-            className="text-xl border-2 border-teal-500 rounded-3xl px-2"
-            type="date"
-            pattern="\d{4}-\d{2}-\d{2}"
-            name="reservation_date"
-            onChange={handleDateChange}
-            value={date}
-          />
-        </div>
-        <div className="text-teal-700">
-          <h4 className="text-xl py-2">Reservations for {dayjs(date).format('YYYY-MM-DD')}</h4>
-        </div>
-        <div className="container">
-          <div className="text-white py-2">
-            <button
-              className="focus:outline-none bg-blue-500 hover:bg-teal-700 bg-teal-500 font-bold text-lg py-2 px-4 rounded-3xl"
-              onClick={() => handlePreviousDate(date)}
-            >
-              Previous
-            </button>
-            <button
-              className="focus:outline-none bg-blue-500 hover:bg-teal-700 bg-teal-500 font-bold text-lg py-2 px-4 mx-4 rounded-3xl"
-              onClick={() => setDate(today())}
-            >
-              Today
-            </button>
-            <button
-              className="focus:outline-none bg-blue-500 hover:bg-teal-700 bg-teal-500 font-bold text-lg py-2 px-4 rounded-3xl"
-              onClick={() => handleNextDate(date)}
-            >
-              Next
-            </button>
-          </div>
+      <div id="header" className="flex flex-col justify-center lg:flex-row items-center p-4 bg-teal-500 ">
+        <label htmlFor="reservation_date">
+          <h1 className="text-3xl sm:text-4xl m-2 font-bold text-white">Current Date:</h1>
+        </label>
+        <input
+          className="text-2xl md:text-2xl font-bold text-teal-700 border-2 border-teal-500 rounded-3xl p-2 m-3"
+          type="date"
+          pattern="\d{4}-\d{2}-\d{2}"
+          name="reservation_date"
+          onChange={handleDateChange}
+          value={date}
+        />
+        <div id="buttonGroups" className="text-gray-100 sm:text-xl m-2">
+          <button
+            className="focus:outline-none bg-orange-500 hover:bg-teal-700 bg-teal-500 font-bold py-2 px-3 rounded-3xl"
+            onClick={() => handlePreviousDate(date)}
+          >
+            Previous
+          </button>
+          <button
+            className="focus:outline-none bg-orange-500 hover:bg-teal-700 bg-teal-500 font-bold py-2 px-3 mx-3 my-2 sm:mx-2 rounded-3xl"
+            onClick={() => setDate(today())}
+          >
+            Today
+          </button>
+          <button
+            className="focus:outline-none bg-orange-500 hover:bg-teal-700 bg-teal-500 font-bold py-2 px-4 rounded-3xl"
+            onClick={() => handleNextDate(date)}
+          >
+            Next
+          </button>
         </div>
       </div>
-
-      <ErrorAlert error={error} />
-      <Reservations reservations={reservations} />
-      <h2 className="font-bold text-center text-teal-700 text-5xl mx-2">Tables</h2>
-      <TableList tables={tables} />
-
+      <div
+        className="w-full h-full bg-no-repeat bg-cover bg-top"
+        style={{ backgroundImage: `url(${cooking})` }}
+      >
+        <ErrorAlert error={error} />
+        <Reservations reservations={reservations} />
+        <h2 className="font-bold text-center text-teal-700 text-3xl md:text-5xl m-4">TABLES</h2>
+        <TableList tables={tables} />
+      </div>
     </main>
   );
 }

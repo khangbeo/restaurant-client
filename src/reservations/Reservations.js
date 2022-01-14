@@ -27,7 +27,7 @@ export default function Reservations({ reservations }) {
             {reservations.map(reservation => (
                 <div key={reservation.reservation_id}>
                     {(reservation.status !== 'finished' && reservation.status !== 'cancelled') && (
-                        <div className="mx-16 sm:w-8/12 my-6 text-xl leading-10 bg-teal-500 text-white text-center border p-4 rounded-3xl">
+                        <div className="drop-shadow-3xl mx-8 sm:mx-16 my-6 text-xl leading-10 bg-teal-500 text-gray-100 font-bold text-xl text-center p-4 rounded-3xl">
                             <p>First Name: {reservation.first_name}</p>
                             <p>Last Name: {reservation.last_name}</p>
                             <p>Mobile Number: {reservation.mobile_number}</p>
@@ -35,21 +35,21 @@ export default function Reservations({ reservations }) {
                             <p>Reservation Time: {dayjs(reservation.reservation_date).format('hh:mm A')}</p>
                             <p>People: {reservation.people}</p>
                             <p data-reservation-id-status={`${reservation.reservation_id}`}>Status: {reservation.status}</p>
-                            <div className="flex justify-center">
+                            <div className="flex justify-center mt-2 font-bold text-teal-700">
                                 <a
-                                    className="focus:outline-none hover:no-underline bg-gray-300 hover:bg-gray-400 hover:text-black text-gray-800 font-bold py-2 px-3"
+                                    className="focus:outline-none hover:no-underline bg-gray-100 hover:bg-teal-600 hover:text-black py-1 px-3 rounded-full mr-3"
                                     href={`/reservations/${reservation.reservation_id}/edit`}>
                                     Edit
                                 </a>
                                 {reservation.status === 'booked' && (
                                     <a
-                                        className="focus:outline-none hover:no-underline bg-gray-300 hover:bg-gray-400 hover:text-black text-gray-800 font-bold py-2 px-3"
+                                        className="focus:outline-none hover:no-underline bg-gray-100 hover:bg-teal-600 hover:text-black py-1 px-4 rounded-full"
                                         href={`/reservations/${reservation.reservation_id}/seat`}>
                                         Seat
                                     </a>
                                 )}
                                 <button
-                                    className="focus:outline-none bg-gray-300 hover:bg-gray-400 hover:text-black text-gray-800 font-bold py-2 px-3"
+                                    className="focus:outline-none bg-gray-100 hover:bg-teal-600 hover:text-black font-bold py-1 px-3 rounded-full ml-3"
                                     onClick={() => handleCancel(reservation.reservation_id)} data-reservation-id-cancel={reservation.reservation_id}>
                                     Cancel
                                 </button>
