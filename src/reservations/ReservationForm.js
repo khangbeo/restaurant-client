@@ -6,7 +6,9 @@ export default function ReservationForm({
     handleChange,
     formData,
     history,
+    id
 }) {
+    const date = `${formData.reservation_date}`.substring(0, 10)
     return (
         <div>
             <form
@@ -60,7 +62,7 @@ export default function ReservationForm({
                         id='reservation_date'
                         name='reservation_date'
                         pattern='\d{4}-\d{2}-\d{2}'
-                        value={formData.reservation_date}
+                        value={date}
                         onChange={handleChange}
                         required
                     />

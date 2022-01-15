@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router'
 import ErrorAlert from '../layout/ErrorAlert'
-import { listReservations } from '../utils/api'
+import { listReservations, listTables } from '../utils/api'
 import { deleteTable } from '../utils/api'
 
 export default function Table({ table, index }) {

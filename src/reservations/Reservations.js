@@ -32,7 +32,7 @@ export default function Reservations({ reservations }) {
                             <p>Last Name: {reservation.last_name}</p>
                             <p>Mobile Number: {reservation.mobile_number}</p>
                             <p>Reservation Date: {dayjs(reservation.reservation_date).format('MM/DD/YYYY')}</p>
-                            <p>Reservation Time: {dayjs(reservation.reservation_date).format('hh:mm A')}</p>
+                            <p>Reservation Time: {reservation.reservation_time}</p>
                             <p>People: {reservation.people}</p>
                             <p data-reservation-id-status={`${reservation.reservation_id}`}>Status: {reservation.status}</p>
                             <div className="flex justify-center mt-2 font-bold text-teal-700">
