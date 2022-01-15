@@ -24,7 +24,7 @@ function Layout() {
             <span>Periodic Tables</span>
           </div>
         </Link>
-        <button className="p-4 focus:outline-none focus:bg-gray-700">
+        <button type="button" className="p-4 focus:outline-none focus:bg-gray-700">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -34,7 +34,7 @@ function Layout() {
       <div className="sidebar z-10 w-62 bg-teal-700 space-y-6 py-7 px-2 md:relative md:translate-x-0 absolute inset-y-0 left-0 transform -translate-x-full transition duration-150 ease-in-out">
         <Menu />
       </div>
-
+      {/* main content */}
       <div className="flex-1">
         <Routes />
       </div>

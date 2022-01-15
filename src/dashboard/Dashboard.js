@@ -8,6 +8,7 @@ import { useHistory } from "react-router";
 import Reservations from "../reservations/Reservations";
 import TableList from "../tables/TableList";
 import cooking from '../images/cooking-bg.jpg'
+import '../layout/Layout'
 
 /**
  * Defines the dashboard page.
@@ -61,30 +62,33 @@ function Dashboard() {
     <main>
       <div id="header" className="flex flex-col justify-center lg:flex-row items-center p-4 bg-teal-500 ">
         <label htmlFor="reservation_date">
-          <h1 className="text-3xl sm:text-4xl m-2 font-bold text-white">Current Date:</h1>
+          <h1 id="header-text" className="text-4xl sm:text-4xl m-1 font-bold text-white">Current Date:</h1>
         </label>
         <input
-          className="text-2xl md:text-2xl font-bold text-teal-700 border-2 border-teal-500 rounded-3xl p-2 m-3"
+          className="text-2xl md:text-2xl font-bold text-teal-700 border-2 border-teal-500 rounded-3xl p-2 m-2 mx-4"
           type="date"
           pattern="\d{4}-\d{2}-\d{2}"
           name="reservation_date"
           onChange={handleDateChange}
           value={date}
         />
-        <div id="buttonGroups" className="text-gray-100 sm:text-xl m-2">
+        <div id="buttonGroups" className="text-gray-100 text-xl sm:text-2xl ">
           <button
+            type="button"
             className="focus:outline-none bg-orange-500 hover:bg-teal-700 bg-teal-500 font-bold py-2 px-3 rounded-3xl"
             onClick={() => handlePreviousDate(date)}
           >
             Previous
           </button>
           <button
+            type="button"
             className="focus:outline-none bg-orange-500 hover:bg-teal-700 bg-teal-500 font-bold py-2 px-3 mx-3 my-2 sm:mx-2 rounded-3xl"
             onClick={() => setDate(today())}
           >
             Today
           </button>
           <button
+            type="button"
             className="focus:outline-none bg-orange-500 hover:bg-teal-700 bg-teal-500 font-bold py-2 px-4 rounded-3xl"
             onClick={() => handleNextDate(date)}
           >

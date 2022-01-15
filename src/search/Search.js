@@ -32,16 +32,16 @@ export default function Search() {
     return (
         <div
             style={{ backgroundImage: `url(${cooking})` }}
-            className="w-full h-screen sm:full bg-no-repeat bg-cover bg-top"
+            className="w-full h-screen sm:h-full bg-no-repeat bg-cover bg-top"
         >
             <div
-                className="text-center p-3"
+                className="text-center p-4"
             >
                 <ErrorAlert error={error} />
                 <h2 className='font-bold text-teal-700 text-3xl sm:text-5xl mx-2 '>Search Reservations By Phone Number</h2>
                 <form onSubmit={handleSubmit}>
                     <input
-                        className='text-lg sm:text-2xl text-teal-700 border-2 border-teal-500 rounded-3xl p-2 sm:p-4 text-center mx-2 my-4'
+                        className='text-md text-teal-700 border-2 border-teal-500 rounded-3xl text-center mx-2 my-4 w-70 h-12'
                         type="tel"
                         name="mobile_number"
                         value={number}
@@ -50,7 +50,7 @@ export default function Search() {
                         required
                     />
                     <button
-                        className='focus:outline-none text-white bg-blue-500 hover:bg-teal-700 bg-teal-500 font-bold text-lg py-2 px-4 rounded-3xl'
+                        className='focus:outline-none text-white bg-teal-500 hover:bg-teal-700 bg-teal-500 font-bold text-lg w-20 h-11 rounded-3xl'
                         type="submit"
                     >
                         Find
@@ -63,9 +63,7 @@ export default function Search() {
                         <p>No reservations found</p>
                     ) : ('')
                 }
-            </div >
+            </div>
         </div>
-
     )
-
 }

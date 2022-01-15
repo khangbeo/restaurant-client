@@ -98,7 +98,7 @@ export default function ReservationForm({
                     <button type='submit' className="focus:outline-none bg-gray-100 hover:bg-teal-600 hover:text-black text-teal-700 font-bold py-1 px-3 rounded-full mx-3">
                         Submit
                     </button>
-                    <button onClick={history.goBack} className="focus:outline-none bg-gray-100 hover:bg-teal-600 hover:text-black text-teal-700 font-bold py-1 px-3 rounded-full mx-3">
+                    <button type="button" onClick={history.goBack} className="focus:outline-none bg-gray-100 hover:bg-teal-600 hover:text-black text-teal-700 font-bold py-1 px-3 rounded-full mx-3">
                         Cancel
                     </button>
                 </div>
