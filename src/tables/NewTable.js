@@ -45,8 +45,8 @@ export default function NewTable() {
         >
             <h2 className="font-bold text-teal-700 text-center text-3xl sm:text-5xl mx-2 p-3">Create a Table</h2>
             <ErrorAlert error={error} />
-            <div className="mx-auto sm:w-8/12 my-6 text-2xl font-bold leading-10 bg-teal-500 text-white text-center drop-shadow-3xl p-4 rounded-3xl">
-                <form onSubmit={handleSubmit}>
+            <div className="p-4">
+                <form className="mx-auto sm:w-8/12 text-2xl font-bold leading-10 bg-teal-500 text-white text-center drop-shadow-3xl p-4 rounded-3xl" onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="table_name">Table Name</label>
                         <input
@@ -75,10 +75,10 @@ export default function NewTable() {
                         />
                     </div>
                     <div className="mt-4">
-                        <button type='submit' className="focus:outline-none bg-gray-100 hover:bg-teal-600 hover:text-black text-teal-700 font-bold py-1 px-3 rounded-full">
+                        <button type='submit' className="focus:outline-none bg-gray-100 hover:bg-teal-600 hover:text-black text-teal-700 font-bold py-1 px-3 m-2 rounded-full">
                             Submit
                         </button>
-                        <button type="button" onClick={history.goBack} className="focus:outline-none bg-gray-100 hover:bg-teal-600 hover:text-black text-teal-700 font-bold py-1 px-3 rounded-full mx-3">
+                        <button type="button" onClick={history.goBack} className="focus:outline-none bg-gray-100 hover:bg-teal-600 hover:text-black text-teal-700 font-bold py-1 px-3 rounded-full m-2">
                             Cancel
                         </button>
                     </div>

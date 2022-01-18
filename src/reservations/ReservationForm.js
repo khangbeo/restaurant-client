@@ -10,9 +10,9 @@ export default function ReservationForm({
 }) {
     const date = `${formData.reservation_date}`.substring(0, 10)
     return (
-        <div>
+        <div className='p-2'>
             <form
-                className="mx-auto w-10/12 sm:w-8/12 drop-shadow-3xl my-6 text-xl md:text-2xl font-bold leading-10 bg-teal-500 text-white text-center p-4 rounded-3xl"
+                className="mx-auto w-10/12 sm:w-8/12 drop-shadow-3xl text-xl md:text-2xl font-bold leading-10 bg-teal-500 text-white text-center p-4 rounded-3xl"
                 onSubmit={handleSubmit}
             >
                 <div className="form-group">
@@ -95,10 +95,10 @@ export default function ReservationForm({
                     />
                 </div>
                 <div className="sm:mt-4">
-                    <button type='submit' className="focus:outline-none bg-gray-100 hover:bg-teal-600 hover:text-black text-teal-700 font-bold py-1 px-3 rounded-full mx-2 md:mx-3">
+                    <button type='submit' className="focus:outline-none bg-gray-100 hover:bg-teal-600 hover:text-black text-teal-700 font-bold py-2 px-3 rounded-full m-2 md:mx-3">
                         Submit
                     </button>
-                    <button type="button" onClick={history.goBack} className="focus:outline-none bg-gray-100 hover:bg-teal-600 hover:text-black text-teal-700 font-bold py-1 px-3 rounded-full mx-2 md:mx-3">
+                    <button type="button" onClick={history.goBack} className="focus:outline-none bg-gray-100 hover:bg-teal-600 hover:text-black text-teal-700 font-bold py-2 px-3 rounded-full m-2 md:mx-3">
                         Cancel
                     </button>
                 </div>
