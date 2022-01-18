@@ -23,10 +23,10 @@ export default function Reservations({ reservations }) {
             <ErrorAlert error={error} />
             {reservations.map(reservation => (
                 <div key={reservation.reservation_id}>
-                <ReservationCard
-                    reservation={reservation}
-                    handleCancel={handleCancel}
-                />
+                    <ReservationCard
+                        reservation={reservation}
+                        handleCancel={handleCancel}
+                    />
                 </div>
             ))}
         </div>

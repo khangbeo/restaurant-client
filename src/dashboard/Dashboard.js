@@ -47,6 +47,7 @@ function Dashboard() {
 
   function handleDateChange({ target }) {
     setDate(target.value)
+    history.push(`dashboard?date=${target.value}`)
   }
 
   function handlePreviousDate() {
@@ -57,7 +58,10 @@ function Dashboard() {
     setDate(next(date))
     history.push(`dashboard?date=${next(date)}`)
   }
-
+  function handleToday() {
+    setDate(today())
+    history.push(`dashboard?date=${today()}`)
+  }
   return (
     <main>
       <div id="header" className="flex flex-col justify-center lg:flex-row items-center p-4 bg-teal-500 ">
@@ -76,28 +80,28 @@ function Dashboard() {
           <button
             type="button"
             className="focus:outline-none bg-orange-500 hover:bg-teal-700 bg-teal-500 font-bold py-2 px-3 rounded-3xl"
-            onClick={() => handlePreviousDate(date)}
+            onClick={() => handlePreviousDate()}
           >
             Previous
           </button>
           <button
             type="button"
             className="focus:outline-none bg-orange-500 hover:bg-teal-700 bg-teal-500 font-bold py-2 px-3 mx-3 my-2 sm:mx-2 rounded-3xl"
-            onClick={() => setDate(today())}
+            onClick={() => handleToday()}
           >
             Today
           </button>
           <button
             type="button"
             className="focus:outline-none bg-orange-500 hover:bg-teal-700 bg-teal-500 font-bold py-2 px-4 rounded-3xl"
-            onClick={() => handleNextDate(date)}
+            onClick={() => handleNextDate()}
           >
             Next
           </button>
         </div>
       </div>
       <div
-        className="w-full h-full bg-no-repeat bg-cover bg-top"
+        className="w-full min-h-screen bg-no-repeat bg-cover bg-top"
         style={{ backgroundImage: `url(${cooking})` }}
       >
         <ErrorAlert error={error} />

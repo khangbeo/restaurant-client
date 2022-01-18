@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 function Menu() {
   return (
-    <nav className="text-center py-3 px-4">
+    <nav className="py-3 px-4">
       <div className="w-full text-xl">
         <Link
           className="navbar-brand"

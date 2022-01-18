@@ -78,9 +78,9 @@ export default function NewEditReservation() {
         <div style={{ backgroundImage: `url(${cooking})` }}
             className="w-full sm:h-full h-screen bg-no-repeat bg-cover bg-top">
             {reservationId ? (
-                <h2 className="font-bold text-teal-700 text-center text-3xl lg:text-5xl mx-2 p-3">Edit Reservation</h2>
+                <h2 className="font-bold text-teal-700 text-center text-3xl md:text-5xl mx-2 p-3">Edit Reservation</h2>
             ) : (
-                <h2 className="font-bold text-teal-700 text-center text-3xl lg:text-5xl mx-2 p-3">Create a Reservation</h2>
+                <h2 className="font-bold text-teal-700 text-center text-3xl md:text-5xl mx-2 p-3">Create a Reservation</h2>
             )}
             <ErrorAlert error={error} />
             <ReservationForm

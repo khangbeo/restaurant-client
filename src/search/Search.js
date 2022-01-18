@@ -32,7 +32,7 @@ export default function Search() {
     return (
         <div
             style={{ backgroundImage: `url(${cooking})` }}
-            className="w-full h-screen sm:h-full bg-no-repeat bg-cover bg-top"
+            className="w-full min-h-screen sm:h-full bg-no-repeat bg-cover bg-top"
         >
             <div
                 className="text-center p-4"
